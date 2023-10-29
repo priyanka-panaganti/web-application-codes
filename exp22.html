@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amrita Cyber Nation Registration</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Amrita Cyber Nation Registration</h2>
+        <form action="process_registration.php" method="POST">
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required autocomplete="off">
+            </div>
+
+            <!-- Hidden Form Fields -->
+            <input type="hidden" name="registration_type" value="Amrita Cyber Nation">
+            <!-- You can add more hidden fields as needed -->
+
+            <!-- Captcha -->
+            <div class="form-group">
+                <label for="captcha">Captcha:</label>
+                <input type="text" id="captcha" name="captcha" required autocomplete="off">
+                <!-- You can implement a Captcha system here using JavaScript or a third-party service -->
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
