@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bank Login</h2>
+        <form action="bank_login.php" method="POST">
+            <div class="form-group">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" onclick="openNewWindow()">Login</button>
+        </form>
+    </div>
+    
+    <script>
+        function openNewWindow() {
+            // Define the URL of your bank's login page
+            var bankLoginUrl = "exp3-2.html";
+            
+            // Define the window features (no address, status, and navigation bars)
+            var windowFeatures = "width=800,height=600,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no";
+
+            // Open the login page in a new browser window
+            var newWindow = window.open(bankLoginUrl, "_blank", windowFeatures);
+
+            if (newWindow) {
+                // Close the current window
+                window.close();
+            } else {
+                alert("Pop-up blocker prevented the new window from opening. Please allow pop-ups.");
+            }
+        }
+    </script>
+</body>
+</html>
