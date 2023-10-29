@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Fund Transfer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bank Fund Transfer</h2>
+        <form action="process_fund_transfer.php" method="post" id="fundTransferForm">
+            <label for="recipient">Recipient Account:</label>
+            <input type="text" id="recipient" name="recipient" required>
+            <label for="amount">Transfer Amount:</label>
+            <input type="text" id="amount" name="amount" required>
+
+            <!-- JavaScript to block copy, paste, and right-click -->
+            <script>
+                const form = document.getElementById('fundTransferForm');
+
+                form.addEventListener('copy', (e) => {
+                    e.preventDefault();
+                    alert("Copying is not allowed.");
+                });
+
+                form.addEventListener('cut', (e) => {
+                    e.preventDefault();
+                    alert("Cutting is not allowed.");
+                });
+
+                form.addEventListener('paste', (e) => {
+                    e.preventDefault();
+                    alert("Pasting is not allowed.");
+                });
+
+                form.addEventListener('contextmenu', (e) => {
+                    e.preventDefault();
+                    alert("Right-clicking is not allowed.");
+                });
+            </script>
+
+            <button type="submit">Transfer Funds</button>
+        </form>
+    </div>
+</body>
+</html>

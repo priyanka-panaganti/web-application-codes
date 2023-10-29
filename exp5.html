@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country Validation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Country Validation Form</h2>
+        <form id="validationForm">
+            <label for="country">Choose a Country:</label>
+            <select id="country" name="country">
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <!-- Add more country options as needed -->
+            </select>
+            <button type="button" onclick="validateCountry()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validateCountry() {
+            // Get the selected country from the dropdown
+            const selectedCountry = document.getElementById("country").value;
+
+            // Use the Geolocation API to get the user's location
+            navigator.geolocation.getCurrentPosition(function(position) {
+                // Retrieve the country based on geolocation (you might need to use a service for this)
+                // For simplicity, we'll assume the user's location is India (latitude and longitude for India).
+                const userLocation = { latitude: 20.5937, longitude: 78.9629 };
+                const userCountry = "India";
+
+                if (selectedCountry === userCountry) {
+                    alert("Success: Country and Geo Location match!");
+                    // Process your form submission here
+                } else {
+                    alert("Geo Location does not match.");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
