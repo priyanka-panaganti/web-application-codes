@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>sign up</title>
+
+	
+    
+</head>
+
+<body>
+ 
+      
+                <form  method="post" action="subscribe.php"  onsubmit="return validatePassword()" enctype="multipart/form-data">
+                    <div class="group">
+						<br>
+                        <label for="pass" class="label">Username</label>
+                        <input id="text" type="text" class="input" >
+                    </div>
+					<br>
+					
+                    <div class="group">
+                        <label for="pass" class="label">Email Id</label>
+                        <input id="text" type="text" class="input"  >
+                    </div>
+                   <br>
+
+				   <div class="form-group" style="display: none;">
+					<label for="honeypot">Leave this field empty</label>
+					<input type="text" id="honeypot" name="honeypot">
+				   </div>
+                      
+                        <div data-for="message" class="group">
+                        <label for="user" class="label">Password*</label>
+                            <input name="password"  type="password" data-form-field="password" class="input"  required >
+                        </div>
+						<div class="group">
+							<label for="question" class="label">Security Question</label>
+							<select id="question" class="input">
+								<option value="pet" >What is your pet's name?</option>
+								<option value="place"  >What is your favorite place?</option>
+								<option value="color"  >What is your favorite color?</option>
+							</select>
+						</div>
+						
+						<div class="group">
+							<label for="answer" class="label">Answer</label>
+							<input id="answer" type="text" class="input">
+						</div>
+						<br>
+                        <div id="recaptcha-container" class="group" id = "center-allign" ></div>
+                        <a href="#forgot">Forgot Password?</a>
+                    </div>
+                 </form>
+
+  
+
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+
+    <script type="module">
+      
+      const firebaseConfig = {
+    apiKey: "AIzaSyDntgM1JxhFWzbUzq7rPT8j44nqUIFnQP8",
+    authDomain: "sample-18975.firebaseapp.com",
+    projectId: "sample-18975",
+    storageBucket: "sample-18975.appspot.com",
+    messagingSenderId: "332950120346",
+    appId: "1:332950120346:web:927eb05bfd0f4379677c23",
+    measurementId: "G-GF3XLN7TF3"
+  };
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      
+      </script> 
+	
+  <script>
+      window.onload=function () {
+      render();
+      };
+       function render() {
+       window.recaptchaVerifier=new firebase.auth.RecaptchaVerifier('recaptcha-container');
+       recaptchaVerifier.render();
+}
+
+
+  </script>
+      
+
+
+</body>
+</html>
