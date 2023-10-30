@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+</head>
+<body>
+    <h2>Student Details</h2>
+    <button id="loadStudent">Load Student</button>
+    <div id="studentInfo"></div>
+
+    <script>
+        document.getElementById('loadStudent').addEventListener('click', function() {
+            fetch('data:application/json,{"name":"John Doe","rollNumber":"12345","grade":"A+","subjects":["Math","Science","History"]}')
+                .then(response => response.json())
+                .then(data => {
+                    const studentInfo = document.getElementById('studentInfo');
+                    studentInfo.innerHTML = `
+                        <h3>Name: ${data.name}</h3>
+                        <p>Roll Number: ${data.rollNumber}</p>
+                        <p>Grade: ${data.grade}</p>
+                        <p>Subjects: ${data.subjects.join(', ')}</p>
+                    `;
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
